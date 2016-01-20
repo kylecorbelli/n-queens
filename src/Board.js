@@ -138,7 +138,17 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
-      return false; // fixme
+      var count = 0;
+      for (var rowIndex = 0, colIndex = majorDiagonalColumnIndexAtFirstRow; colIndex < this.get('n'); rowIndex++, colIndex++) {
+        if (count > 1) {
+          return true;
+        }
+        if (this._isInBounds(rowIndex, colIndex) && this.get(rowIndex)[colIndex] === 1) {
+          count++;
+        }
+      }
+      return false;
+
     },
 
     // test if any major diagonals on this board contain conflicts
