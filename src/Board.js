@@ -79,7 +79,17 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      return false; // fixme
+      var row = this.get(rowIndex);
+      var count = 0;
+      for (var i = 0; i < this.get('n'); i++) {
+        if (count > 1) {
+          return true;
+        }
+        if (row[i] === 1) {
+          count++;
+        }
+      }
+      return false;
     },
 
     // test if any rows on this board contain conflicts
