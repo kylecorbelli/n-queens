@@ -153,7 +153,12 @@
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      return false; // fixme
+      for (var colIndex = 2 - this.get('n'); colIndex < this.get('n')-1; colIndex++) {
+        if (this.hasMajorDiagonalConflictAt(colIndex)) {
+          return true;
+        }
+      }
+      return false;
     },
 
 
