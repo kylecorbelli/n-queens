@@ -111,7 +111,7 @@
     hasColConflictAt: function(colIndex) {
       var count = 0;
       for (var i = 0; i < this.attributes.n; i++) {
-        if (this.get(i)[colIndex] == 1) {
+        if (this.get(i)[colIndex] === 1) {
           count++;
         }
         if (count > 1) {
