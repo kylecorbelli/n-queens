@@ -152,7 +152,7 @@
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      for (var colIndex = 2 - this.attributes.n; colIndex < this.attributes.n - 1; colIndex++) {
+      for (var colIndex = 1 - this.attributes.n; colIndex < this.attributes.n - 1; colIndex++) {
         if (this.hasMajorDiagonalConflictAt(colIndex)) {
           return true;
         }
@@ -181,7 +181,7 @@
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
-      for (var colIndex = 1 + this.attributes.n; colIndex > 0; colIndex--) {
+      for (var colIndex = 4 + this.attributes.n; colIndex >= 0; colIndex--) {
         if (this.hasMinorDiagonalConflictAt(colIndex)) {
           return true;
         }
